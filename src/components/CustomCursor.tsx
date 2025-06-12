@@ -44,13 +44,20 @@ const CustomCursor = () => {
 
   return (
     <>
+      {/* Main Cursor - Arrow Shape */}
       <div
-        className={`custom-cursor ${isHovering ? 'hover' : ''}`}
+        className={`custom-cursor-arrow ${isHovering ? 'hover' : ''}`}
         style={{
           left: `${mousePosition.x}px`,
           top: `${mousePosition.y}px`,
         }}
-      />
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M5 3L19 12L12 13L8 21L5 3Z" fill="currentColor" />
+        </svg>
+      </div>
+      
+      {/* Follower Circle */}
       <div
         className={`custom-cursor-follower ${isHovering ? 'hover' : ''}`}
         style={{

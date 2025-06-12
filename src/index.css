@@ -38,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -104,17 +97,16 @@
   }
 }
 
-/* Custom Cursor */
-.custom-cursor {
+/* Enhanced Custom Cursor */
+.custom-cursor-arrow {
   position: fixed;
-  width: 20px;
-  height: 20px;
-  background: #C41E3A;
-  border-radius: 50%;
+  width: 24px;
+  height: 24px;
   pointer-events: none;
   z-index: 9999;
   transition: all 0.1s ease;
-  mix-blend-mode: difference;
+  color: #C41E3A;
+  transform: rotate(-45deg);
 }
 
 .custom-cursor-follower {
@@ -128,14 +120,15 @@
   transition: all 0.15s ease;
 }
 
-.custom-cursor.hover {
-  transform: scale(1.5);
-  background: rgba(196, 30, 58, 0.8);
+.custom-cursor-arrow.hover {
+  transform: rotate(-45deg) scale(1.5);
+  color: rgba(196, 30, 58, 0.8);
 }
 
 .custom-cursor-follower.hover {
   transform: scale(1.2);
   border-color: rgba(196, 30, 58, 0.6);
+  background: rgba(196, 30, 58, 0.1);
 }
 
 /* Hide default cursor */
@@ -196,22 +189,9 @@ html {
 }
 
 /* Animation delays */
-.animate-delay-100 {
-  animation-delay: 0.1s;
-}
-
-.animate-delay-200 {
-  animation-delay: 0.2s;
-}
-
-.animate-delay-300 {
-  animation-delay: 0.3s;
-}
-
-.animate-delay-400 {
-  animation-delay: 0.4s;
-}
-
-.animate-delay-500 {
-  animation-delay: 0.5s;
-}
+.animate-delay-50 { animation-delay: 0.05s; }
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
