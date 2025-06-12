@@ -9,6 +9,7 @@ import PlatformSection from '../components/PlatformSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import VideoSection from '../components/VideoSection';
 import ContactFormSection from '../components/ContactFormSection';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   return (
@@ -19,7 +20,7 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur-md border-b border-gray-200 shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            <div className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-light rounded-2xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-black text-lg">TI</span>
               </div>
@@ -27,13 +28,14 @@ const Index = () => {
                 <span className="font-black text-2xl text-gray-800 block leading-none">TUTELA</span>
                 <span className="font-black text-xl text-brand-red block leading-none">IMPRESA</span>
               </div>
-            </div>
+            </Link>
             
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">Caratteristiche</a>
-              <a href="#" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">Prezzi</a>
-              <a href="#" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">Blog</a>
-              <a href="#" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">Contatti</a>
+              <Link to="/functionality" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">Funzionalità</Link>
+              <Link to="/sectors" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">Settori</Link>
+              <Link to="/blog" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">Blog</Link>
+              <Link to="/faq" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">FAQ</Link>
+              <Link to="/contact" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">Contatti</Link>
               <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 Prova Gratis
               </button>
@@ -76,7 +78,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <div className="flex items-center space-x-3 mb-8">
+              <Link to="/" className="flex items-center space-x-3 mb-8">
                 <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-light rounded-2xl flex items-center justify-center shadow-lg">
                   <span className="text-white font-black text-lg">TI</span>
                 </div>
@@ -84,7 +86,7 @@ const Index = () => {
                   <span className="font-black text-2xl block leading-none">TUTELA</span>
                   <span className="font-black text-xl text-brand-red block leading-none">IMPRESA</span>
                 </div>
-              </div>
+              </Link>
               <p className="text-gray-300 leading-relaxed text-lg mb-6">
                 La soluzione completa per la gestione della sicurezza aziendale e degli adempimenti normativi. 
                 Protezione totale, conformità garantita, futuro sicuro.
@@ -112,8 +114,8 @@ const Index = () => {
             <div>
               <h3 className="font-bold text-xl mb-6 text-brand-red">Prodotto</h3>
               <ul className="space-y-3 text-gray-300">
-                <li><a href="#" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Caratteristiche</a></li>
-                <li><a href="#" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Prezzi</a></li>
+                <li><Link to="/functionality" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Funzionalità</Link></li>
+                <li><Link to="/sectors" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Settori</Link></li>
                 <li><a href="#" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Demo</a></li>
                 <li><a href="#" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Sicurezza</a></li>
                 <li><a href="#" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Integrazioni</a></li>
@@ -126,9 +128,9 @@ const Index = () => {
               <ul className="space-y-3 text-gray-300">
                 <li><a href="#" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Documentazione</a></li>
                 <li><a href="#" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Formazione</a></li>
-                <li><a href="#" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Contatti</a></li>
-                <li><a href="#" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">FAQ</a></li>
-                <li><a href="#" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Community</a></li>
+                <li><Link to="/contact" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Contatti</Link></li>
+                <li><Link to="/faq" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">FAQ</Link></li>
+                <li><Link to="/blog" className="hover:text-white transition-colors hover:translate-x-2 transform duration-200 inline-block">Blog</Link></li>
               </ul>
             </div>
           </div>
