@@ -3,10 +3,14 @@ import CustomCursor from '../components/CustomCursor';
 import HeroSection from '../components/HeroSection';
 import LogosSection from '../components/LogosSection';
 import AboutSection from '../components/AboutSection';
+import HowItWorksSection from '../components/HowItWorksSection';
 import ManagementSection from '../components/ManagementSection';
+import InspectionSection from '../components/InspectionSection';
 import FeaturesSection from '../components/FeaturesSection';
+import OnePlatformSection from '../components/OnePlatformSection';
 import PlatformSection from '../components/PlatformSection';
 import TestimonialsSection from '../components/TestimonialsSection';
+import PricingCTASection from '../components/PricingCTASection';
 import VideoSection from '../components/VideoSection';
 import ContactFormSection from '../components/ContactFormSection';
 import { Link } from 'react-router-dom';
@@ -58,10 +62,14 @@ const Index = () => {
         <HeroSection />
         <LogosSection />
         <AboutSection />
+        <HowItWorksSection />
         <ManagementSection />
+        <InspectionSection />
         <FeaturesSection />
+        <OnePlatformSection />
         <PlatformSection />
         <TestimonialsSection />
+        <PricingCTASection />
         <VideoSection />
         <ContactFormSection />
       </main>
