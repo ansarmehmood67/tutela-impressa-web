@@ -72,14 +72,14 @@ const HeroSection = () => {
             <button className="group relative bg-gradient-to-r from-brand-red to-brand-red-light text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-red-light to-brand-red opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <span className="relative z-10 flex items-center space-x-2">
-                <span>🚀 Inizia Gratis</span>
+                <span>📹 Richiedi Demo</span>
               </span>
             </button>
             
             <button className="group border-3 border-brand-red text-brand-red px-10 py-5 rounded-2xl font-bold text-lg hover:bg-brand-red hover:text-white transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
               <div className="absolute inset-0 bg-brand-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               <span className="relative z-10 flex items-center space-x-2">
-                <span>📹 Richiedi Demo</span>
+                <span>🚀 ACCCESSO CLIENTI</span>
               </span>
             </button>
           </div>

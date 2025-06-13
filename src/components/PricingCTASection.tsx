@@ -11,26 +11,26 @@ const PricingCTASection = () => {
           <div className="absolute top-0 right-0 mt-4 mr-4 w-12 h-12 bg-yellow-400 rounded-full opacity-50 animate-pulse"></div>
           
           <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight">
-            Business Protection for the Price of a Cappuccino
+            Protezione aziendale al prezzo di un cappuccino
           </h2>
           
           <p className="text-lg opacity-90">
-            Complete protection for your business at an incredible price.
+            Protezione completa per la tua azienda a un prezzo incredibile.
           </p>
           
           <div className="flex justify-center gap-4">
             <button className="bg-white text-brand-red px-6 py-3 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
-              Start Now
+              Inizia Ora
             </button>
             <button className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-brand-red transition transform hover:scale-105">
-              Discover Prices
+              Scopri i Prezzi
             </button>
           </div>
           
           <div className="flex justify-center gap-6 text-sm opacity-75">
-            <span>✔ 30-day free trial</span>
-            <span>✔ No strings attached</span>
-            <span>✔ 24/7 support</span>
+            <span>✔ Prova gratuita di 30 giorni</span>
+            <span>✔ Senza vincoli</span>
+            <span>✔ Supporto 24/7</span>
           </div>
         </div>
       </div>

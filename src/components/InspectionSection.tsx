@@ -25,20 +25,18 @@ const InspectionSection = () => {
         {/* Main content */}
         <div className="relative z-10 text-center">
           <h2 className="text-4xl lg:text-5xl font-black mb-4 leading-tight">
-            Inspection? No problem.
+            Ispezione? Nessun problema.
           </h2>
           <p className="text-lg lg:text-xl mb-6 leading-relaxed opacity-95 mx-auto max-w-3xl">
-            With one click you always have everything under control and you can
-            verify the data, required documents, SOA, agency registrations, ORI
-            specific training for construction sites, health registrations,
-            agency inspections.
+            Con un clic hai sempre tutto sotto controllo e puoi verificare dati, documenti richiesti,
+            SOA, registrazioni agenzia, formazione ORI per cantieri, registrazioni sanitarie e ispezioni.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button className="bg-white text-brand-red px-8 py-3 rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-50">
-              Find out more →
+              Scopri di più →
             </button>
             <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-white hover:text-brand-red transition-all duration-300 transform hover:scale-105">
-              Request Demo
+              Richiedi Demo
             </button>
           </div>
         </div>

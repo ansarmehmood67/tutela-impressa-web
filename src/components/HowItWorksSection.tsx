@@ -4,26 +4,26 @@ const HowItWorksSection = () => {
   const steps = [
     {
       number: "1",
-      title: "Upload Data",
-      description: "Simplified uploading and management of company documents",
+      title: "Carica Dati",
+      description: "Semplice caricamento e gestione dei documenti aziendali",
       icon: "📁",
     },
     {
       number: "2",
-      title: "Compliance Structure",
-      description: "Complete process organization and regulatory compliance",
+      title: "Struttura Conformità",
+      description: "Organizzazione completa dei processi e conformità normativa",
       icon: "📋",
     },
     {
       number: "3",
-      title: "Receive Alerts",
-      description: "Timely notifications and automatic reminders",
+      title: "Ricevi Avvisi",
+      description: "Notifiche tempestive e promemoria automatici",
       icon: "🔔",
     },
     {
       number: "4",
-      title: "Archive & Report",
-      description: "Advanced documentation and reporting for controls",
+      title: "Archivia & Report",
+      description: "Documentazione avanzata e reportistica per i controlli",
       icon: "📊",
     }
   ];
@@ -33,14 +33,14 @@ const HowItWorksSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block bg-brand-red text-white px-4 py-2 rounded-full font-medium mb-4">
-            ⚡ Simplified Process
+            ⚡ Processo Semplificato
           </span>
           <h2 className="text-5xl font-extrabold text-gray-900 mb-4">
-            How It Works
+            Come Funziona
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Tutela Impresa automates every corporate security process with an
-            intelligent, intuitive system that simplifies regulatory management.
+            Tutela Impresa automatizza ogni processo di sicurezza aziendale con un sistema 
+            intelligente e intuitivo che semplifica la gestione normativa.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ const HowItWorksSection = () => {
 
               {/* CTA */}
               <button className="w-full bg-brand-red text-white py-2 rounded-full font-medium hover:bg-brand-red-light transition-colors">
-                Find out more →
+                Scopri di più →
               </button>
             </div>
           ))}

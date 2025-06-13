@@ -76,7 +76,7 @@ const Index = () => {
                 Contatti
               </Link>
               <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                Prova Gratis
+                RICHIEDI LA DEMO
               </button>
             </div>
 

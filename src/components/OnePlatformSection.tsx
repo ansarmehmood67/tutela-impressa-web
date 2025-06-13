@@ -1,69 +1,70 @@
+import React from 'react';
 
 const OnePlatformSection = () => {
   const features = [
     {
-      title: "INTEGRATED PERSONNEL MANAGEMENT",
-      description: "Complete control of staff and skills",
+      title: "Gestione del personale integrata",
+      description: "Controllo completo su personale, ruoli e competenze",
       icon: "👤",
       color: "from-blue-500 to-blue-600",
       bgColor: "bg-blue-50",
-      buttonText: "YOU DISCOVER"
+      buttonText: "Scopri di più"
     },
     {
-      title: "MANAGEMENT OF WORKERS' MACHINERY", 
-      description: "Monitoring and maintenance of all machinery",
+      title: "Gestione delle macchine",
+      description: "Monitoraggio e manutenzione di tutte le attrezzature",
       icon: "🏭",
       color: "from-red-500 to-red-600",
       bgColor: "bg-red-50",
-      buttonText: "YOU DISCOVER"
+      buttonText: "Scopri di più"
     },
     {
-      title: "ACCIDENT ACCIDENT MANAGEMENT",
-      description: "Tracking and prevention of accidents at work", 
-      icon: "🩹",
+      title: "Gestione degli incidenti",
+      description: "Tracciamento e prevenzione degli infortuni sul lavoro",
+      icon: "⚠️",
       color: "from-green-500 to-green-600",
       bgColor: "bg-green-50",
-      buttonText: "YOU DISCOVER"
+      buttonText: "Scopri di più"
     },
     {
-      title: "HEALTH SURVEILLANCE MANAGEMENT",
-      description: "Health checks and medical certifications",
-      icon: "🩺", 
+      title: "Sorveglianza sanitaria",
+      description: "Gestione delle visite mediche e certificazioni",
+      icon: "🩺",
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
-      buttonText: "YOU DISCOVER"
+      buttonText: "Scopri di più"
     },
     {
-      title: "TRAINING MANAGEMENT",
-      description: "Complete training programs and certifications",
+      title: "Formazione e certificazione",
+      description: "Programmi di formazione completi e registri",
       icon: "🎓",
-      color: "from-orange-500 to-orange-600", 
+      color: "from-orange-500 to-orange-600",
       bgColor: "bg-orange-50",
-      buttonText: "YOU DISCOVER"
+      buttonText: "Scopri di più"
     },
     {
-      title: "DOCUMENT MANAGEMENT",
-      description: "Advanced tools for document organization",
+      title: "Gestione documentale",
+      description: "Strumenti avanzati per organizzare i documenti",
       icon: "🗂️",
       color: "from-teal-500 to-teal-600",
-      bgColor: "bg-teal-50", 
-      buttonText: "YOU DISCOVER"
+      bgColor: "bg-teal-50",
+      buttonText: "Scopri di più"
     },
     {
-      title: "AUDIT MANAGEMENT",
-      description: "Comprehensive audit and compliance tracking",
+      title: "Audit e conformità",
+      description: "Tracciamento e reportistica di audit end-to-end",
       icon: "📋",
       color: "from-indigo-500 to-indigo-600",
       bgColor: "bg-indigo-50",
-      buttonText: "YOU DISCOVER"
+      buttonText: "Scopri di più"
     },
     {
-      title: "ANALYTICS DASHBOARD",
-      description: "Real-time insights and reporting tools",
-      icon: "📊", 
+      title: "Cruscotto analitico",
+      description: "Insight in tempo reale e metriche di performance",
+      icon: "📊",
       color: "from-pink-500 to-pink-600",
       bgColor: "bg-pink-50",
-      buttonText: "YOU DISCOVER"
+      buttonText: "Scopri di più"
     }
   ];
 
@@ -72,17 +73,16 @@ const OnePlatformSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-brand-red text-white px-6 py-3 rounded-full text-sm font-semibold mb-8">
-            <span>🔒 All-in-One Platform</span>
+            <span>🔒 Piattaforma All-in-One</span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-black mb-6">
-            One platform,<br />
+            Una piattaforma,<br />
             <span className="gradient-text bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent">
-              MANY FEATURES
+              Molte funzionalità
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Tutela Impresa thinks of everything, absolutely everything. A complete solution for 
-            every aspect of corporate security.
+            Tutela Impresa gestisce ogni aspetto—assolutamente tutto. Una soluzione completa per ogni aspetto della sicurezza aziendale.
           </p>
         </div>
 
@@ -104,6 +104,8 @@ const OnePlatformSection = () => {
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 {feature.description}
               </p>
+
+              {/* Button */}
               <button className={`bg-gradient-to-r ${feature.color} text-white px-4 py-2 rounded-lg font-semibold text-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 w-full`}>
                 {feature.buttonText} →
               </button>

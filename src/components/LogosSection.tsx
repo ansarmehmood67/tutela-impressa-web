@@ -27,7 +27,7 @@ const LogosSection = () => {
           </div>
           <h2 className="text-4xl lg:text-5xl font-black mb-6">
             <span className="gradient-text bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent">
-              Trusted by Industry Leaders
+              Affidato dai leader del settore
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
