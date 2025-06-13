@@ -14,6 +14,7 @@ import PricingCTASection from '../components/PricingCTASection';
 import VideoSection from '../components/VideoSection';
 import ContactFormSection from '../components/ContactFormSection';
 import { Link } from 'react-router-dom';
+import logoImg from '../assets/tutela_logo.png';
 
 const Index = () => {
   return (
@@ -21,25 +22,59 @@ const Index = () => {
       <CustomCursor />
       
       {/* Enhanced Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur-md border-b border-gray-200 shadow-lg">
-        <div className="container mx-auto px-4">
+      <nav className="fixed top-0 inset-x-0 z-50 bg-white bg-opacity-95 backdrop-blur-md border-b border-gray-200 shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
+            
+            {/* Logo + Brand */}
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-light rounded-2xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-black text-lg">TI</span>
-              </div>
+              <img
+                src={logoImg}
+                alt="Tutela Impressa Logo"
+                className="h-12 w-auto"
+              />
               <div className="text-left">
-                <span className="font-black text-2xl text-gray-800 block leading-none">TUTELA</span>
-                <span className="font-black text-xl text-brand-red block leading-none">IMPRESA</span>
+                <span className="font-black text-2xl text-gray-800 block leading-none">
+                  
+                </span>
+                <span className="font-black text-xl text-brand-red block leading-none">
+                 
+                </span>
               </div>
             </Link>
             
+            {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/functionality" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">Funzionalità</Link>
-              <Link to="/sectors" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">Settori</Link>
-              <Link to="/blog" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">Blog</Link>
-              <Link to="/faq" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">FAQ</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200">Contatti</Link>
+              <Link
+                to="/functionality"
+                className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200"
+              >
+                Funzionalità
+              </Link>
+              <Link
+                to="/sectors"
+                className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200"
+              >
+                Settori
+              </Link>
+              <Link
+                to="/blog"
+                className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200"
+              >
+                Blog
+              </Link>
+              <Link
+                to="/faq"
+                className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200"
+              >
+                FAQ
+              </Link>
+              <Link
+                to="/contact"
+                className="text-gray-700 hover:text-brand-red transition-colors font-semibold hover:scale-105 transform duration-200"
+              >
+                Contatti
+              </Link>
               <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 Prova Gratis
               </button>
@@ -48,11 +83,22 @@ const Index = () => {
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button className="text-gray-600 hover:text-brand-red">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               </button>
             </div>
+
           </div>
         </div>
       </nav>
@@ -62,14 +108,16 @@ const Index = () => {
         <HeroSection />
         <LogosSection />
         <AboutSection />
-        <HowItWorksSection />
         <ManagementSection />
+        <HowItWorksSection />
         <InspectionSection />
-        <FeaturesSection />
         <OnePlatformSection />
-        <PlatformSection />
-        <TestimonialsSection />
+        
+        
+        
+        
         <PricingCTASection />
+        <TestimonialsSection />
         <VideoSection />
         <ContactFormSection />
       </main>

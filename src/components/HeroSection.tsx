@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react';
+import heroImg from '../assets/dashboard.png';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,7 +10,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden pt-28">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 bg-brand-red rounded-full blur-3xl animate-float"></div>
@@ -104,11 +105,11 @@ const HeroSection = () => {
         <div className={`relative ${isVisible ? 'animate-slide-in-right animate-delay-200' : 'opacity-0'}`}>
           <div className="relative">
             {/* Main Dashboard Container */}
-            <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-700 border border-gray-100">
+            <div className="relative bg-white rounded-3xl shadow-2xl p-4 transform hover:scale-105 transition-all duration-700 border border-gray-200">
               <img 
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                src={heroImg} 
                 alt="Dashboard Sicurezza Aziendale" 
-                className="w-full h-auto rounded-2xl shadow-lg"
+                className="w-full h-auto rounded-2xl shadow-lg border-0"
               />
               
               {/* Floating Security Badge */}
