@@ -5,8 +5,8 @@ const AboutSection = () => {
     <section className="py-20 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center space-y-6">
-          <h2 className="text-4xl lg:text-5xl font-bold text-brand-red">
-            Cos&#8217;è Tutela Impresa
+          <h2 className="text-5xl lg:text-6xl font-extrabold text-brand-red">
+            Tutela Impresa 100%
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
             Un software gestionale in cloud che centralizza tutti gli adempimenti HSE:

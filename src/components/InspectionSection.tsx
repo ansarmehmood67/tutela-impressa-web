@@ -1,49 +1,39 @@
-import React from 'react';
-
 const InspectionSection = () => {
   return (
-    <section className="py-20 bg-white relative overflow-visible">
-      {/* Centered red box: wider (max-w-4xl) and shorter padding */}
-      <div className="mx-auto w-full max-w-4xl bg-gradient-to-br from-brand-red via-brand-red-light to-brand-red text-white rounded-xl overflow-hidden relative px-12 py-12">
-        
-        {/* Background blobs (inside the box) */}
-        <div className="absolute top-8 right-8 w-20 h-20 bg-white rounded-full blur-2xl opacity-10 animate-float" />
-        <div
-          className="absolute bottom-8 left-8 w-28 h-28 bg-white rounded-full blur-3xl opacity-10 animate-float"
-          style={{ animationDelay: '1.5s' }}
-        />
+    <section className="py-20 bg-gradient-to-br from-brand-red via-brand-red-light to-brand-red text-white relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <h2 className="text-5xl lg:text-6xl font-black leading-tight">
+              Ispezione in arrivo?<br />
+              <span className="text-yellow-300">Respira</span><br />
+              <span className="text-yellow-300">Clicca</span><br />
+              <span className="text-yellow-300">Risolto</span>
+            </h2>
+          </div>
 
-        {/* Magnifying glass icon */}
-        <div className="absolute top-6 right-6">
-          <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-            <div className="w-6 h-6 border-4 border-cyan-400 rounded-full relative">
-              <div className="absolute -bottom-1 -right-1 w-1 h-0.5 bg-cyan-400 rounded transform rotate-45" />
+          {/* Right Content */}
+          <div className="space-y-6">
+            <p className="text-xl leading-relaxed">
+              Con Tutela Impresa, anche <strong>il controllo più improvviso diventa un non-evento.</strong>
+            </p>
+            
+            <p className="text-lg leading-relaxed opacity-95">
+              Ti basta un clic sulla piattaforma per avere subito tutta la documentazione aggiornata 
+              e pronta da mostrare: niente panico, niente fogli sparsi, tutto perfettamente in ordine.
+            </p>
+            
+            <p className="text-lg leading-relaxed opacity-95">
+              <strong>Hai tutto lì. In tempo reale. E puoi condividerlo immediatamente con l'ispettore.</strong>
+            </p>
+            
+            <div className="pt-6">
+              <button className="bg-white text-brand-red px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                richiedi la demo
+              </button>
             </div>
           </div>
-        </div>
-
-        {/* Main content */}
-        <div className="relative z-10 text-center">
-          <h2 className="text-4xl lg:text-5xl font-black mb-4 leading-tight">
-            Ispezione? Nessun problema.
-          </h2>
-          <p className="text-lg lg:text-xl mb-6 leading-relaxed opacity-95 mx-auto max-w-3xl">
-            Con un clic hai sempre tutto sotto controllo e puoi verificare dati, documenti richiesti,
-            SOA, registrazioni agenzia, formazione ORI per cantieri, registrazioni sanitarie e ispezioni.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-white text-brand-red px-8 py-3 rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-50">
-              Scopri di più →
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-white hover:text-brand-red transition-all duration-300 transform hover:scale-105">
-              Richiedi Demo
-            </button>
-          </div>
-        </div>
-
-        {/* Bottom decorative circle */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-          <div className="w-10 h-10 border-4 border-white border-opacity-30 rounded-full" />
         </div>
       </div>
     </section>

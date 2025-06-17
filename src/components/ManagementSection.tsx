@@ -1,5 +1,10 @@
+// React and asset imports
 import { useEffect, useState } from 'react';
 import managementImg from '../assets/management.svg';
+import radiationIcon from '../assets/radiation.png';
+import clipboardIcon from '../assets/shiled.svg';
+import healthcareIcon from '../assets/healthcare.png';
+import shieldIcon from '../assets/shield.png';
 
 const ManagementSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,29 +39,22 @@ const ManagementSection = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="max-w-screen-xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div
-            className={`space-y-8 ${
-              isVisible ? 'animate-slide-in-left' : 'opacity-0'
-            }`}
-          >
-            <div className="space-y-6">
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
-                Gestionale HSE semplice,{' '}
-                <span className="text-yellow-300">smart</span>
+          <div className={`space-y-8 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
+            <div className="space-y-2">
+              <h2 className="text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                Gestionale HSE
               </h2>
-              <h3 className="text-2xl lg:text-3xl font-semibold">
-                e sempre con te.
-              </h3>
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-yellow-300">smart</h2>
+              <h3 className="text-2xl font-semibold text-white">Semplice, sempre aggiornato</h3>
             </div>
 
             <p className="text-xl opacity-90 leading-relaxed">
-              Tutto integrato in un unico sistema: formazione, scadenze,
-              controlli, documentazione dei processi e valutazione degli
-              indicatori con audit esterni per la certificazione della
-              conformità.
+              Tutto integrato in un unico sistema: formazione, scadenze, controlli,
+              documentazione dei processi e valutazione degli indicatori con audit esterni
+              per la certificazione della conformità.
             </p>
 
             <button className="bg-white text-brand-red px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
@@ -64,17 +62,11 @@ const ManagementSection = () => {
             </button>
           </div>
 
-          {/* Right Content - Management Graphic */}
-          <div
-            className={`flex justify-center lg:justify-end ${
-              isVisible
-                ? 'animate-slide-in-right animate-delay-200'
-                : 'opacity-0'
-            }`}
-          >
-            <div className="relative">
-              {/* Circular image wrapper */}
-              <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl animate-float">
+          {/* Right Content - Central Circle and Icons */}
+          <div className={`relative flex justify-center lg:justify-end ${isVisible ? 'animate-slide-in-right animate-delay-200' : 'opacity-0'}`}>
+            <div className="relative w-96 h-96">
+              {/* Central Circle */}
+              <div className="w-full h-full rounded-full overflow-hidden shadow-2xl animate-float">
                 <img
                   src={managementImg}
                   alt="Management Dashboard"
@@ -82,41 +74,11 @@ const ManagementSection = () => {
                 />
               </div>
 
-              {/* Floating Icons */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-pulse-glow">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-
-              <div
-                className="absolute -bottom-4 -left-4 w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center shadow-lg animate-pulse-glow"
-                style={{ animationDelay: '0.5s' }}
-              >
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              </div>
+              {/* Icons Around the Circle */}
+              <img src={clipboardIcon} alt="Clipboard" className="absolute top-0 left-16 w-24 h-24 transform -translate-x-1/2 -translate-y-1/2" />
+              <img src={shieldIcon} alt="Shield" className="absolute top-8 right-0 w-24 h-24 transform translate-x-1/2 -translate-y-1/2" />
+              <img src={radiationIcon} alt="Radiation" className="absolute bottom-0 right-[-20px] w-24 h-24 transform -translate-x-1/2 translate-y-1/2" />
+              <img src={healthcareIcon} alt="Healthcare" className="absolute bottom-10 left-0 w-24 h-24 transform -translate-x-1/2 translate-y-1/2" />
             </div>
           </div>
         </div>

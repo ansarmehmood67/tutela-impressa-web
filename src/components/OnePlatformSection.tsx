@@ -1,114 +1,107 @@
 import React from 'react';
+import DocumentIcon from '../assets/icons/document (1).svg';
+import CertificateIcon from '../assets/icons/training certificate.svg';
+import DeadlinesIcon from '../assets/icons/deadlines.svg';
+import SupportIcon from '../assets/icons/support.svg';
+import ResourcesIcon from '../assets/icons/resources.svg';
+import ReportsIcon from '../assets/icons/reports.svg';
+import PlatformIcon from '../assets/icons/dedicated platform.svg';
+import CloudIcon from '../assets/icons/cloud.svg';
+import SecurityIcon from '../assets/icons/security.svg';
 
 const OnePlatformSection = () => {
   const features = [
     {
-      title: "Gestione del personale integrata",
-      description: "Controllo completo su personale, ruoli e competenze",
-      icon: "👤",
-      color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50",
-      buttonText: "Scopri di più"
+      title: "Documenti",
+      description:
+        "Verifica completa, zero rischi. Controlliamo ogni documento obbligatorio per la sicurezza sul lavoro, così tu puoi concentrarti sul far crescere la tua impresa.",
+      icon: DocumentIcon,
     },
     {
-      title: "Gestione delle macchine",
-      description: "Monitoraggio e manutenzione di tutte le attrezzature",
-      icon: "🏭",
-      color: "from-red-500 to-red-600",
-      bgColor: "bg-red-50",
-      buttonText: "Scopri di più"
+      title: "Attestati di Formazione",
+      description:
+        "Formazione a norma, team protetto. Ci assicuriamo che ogni tuo collaboratore sia in regola con i corsi obbligatori.",
+      icon: CertificateIcon,
     },
     {
-      title: "Gestione degli incidenti",
-      description: "Tracciamento e prevenzione degli infortuni sul lavoro",
-      icon: "⚠️",
-      color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50",
-      buttonText: "Scopri di più"
+      title: "Scadenze",
+      description:
+        "Teniamo sotto controllo tutte le scadenze e gli aggiornamenti di documenti e corsi obbligatori, assicurando il rispetto delle normative vigenti.",
+      icon: DeadlinesIcon,
     },
     {
-      title: "Sorveglianza sanitaria",
-      description: "Gestione delle visite mediche e certificazioni",
-      icon: "🩺",
-      color: "from-purple-500 to-purple-600",
-      bgColor: "bg-purple-50",
-      buttonText: "Scopri di più"
+      title: "Hotline 24/7",
+      description:
+        "La piattaforma ti collega in tempo reale con i nostri esperti, pronti a supportarti su ogni aspetto della sicurezza aziendale.",
+      icon: SupportIcon,
     },
     {
-      title: "Formazione e certificazione",
-      description: "Programmi di formazione completi e registri",
-      icon: "🎓",
-      color: "from-orange-500 to-orange-600",
-      bgColor: "bg-orange-50",
-      buttonText: "Scopri di più"
+      title: "Report operativi",
+      description:
+        "Controlliamo costantemente la situazione della tua azienda con report dettagliati, per offrirti una gestione precisa, proattiva e aggiornata.",
+      icon: ReportsIcon,
     },
     {
-      title: "Gestione documentale",
-      description: "Strumenti avanzati per organizzare i documenti",
-      icon: "🗂️",
-      color: "from-teal-500 to-teal-600",
-      bgColor: "bg-teal-50",
-      buttonText: "Scopri di più"
+      title: "Centro Risorse",
+      description:
+        "Webinar, guide pratiche e materiali per aiutarti a costruire e rafforzare una solida cultura della sicurezza interna.",
+      icon: ResourcesIcon,
     },
     {
-      title: "Audit e conformità",
-      description: "Tracciamento e reportistica di audit end-to-end",
-      icon: "📋",
-      color: "from-indigo-500 to-indigo-600",
-      bgColor: "bg-indigo-50",
-      buttonText: "Scopri di più"
+      title: "Piattaforma Dedicata",
+      description:
+        "Una piattaforma su misura per la tua azienda: carichi i tuoi dati, gestisci documenti, organizzi call, tutto in uno spazio protetto e accessibile.",
+      icon: PlatformIcon,
     },
     {
-      title: "Cruscotto analitico",
-      description: "Insight in tempo reale e metriche di performance",
-      icon: "📊",
-      color: "from-pink-500 to-pink-600",
-      bgColor: "bg-pink-50",
-      buttonText: "Scopri di più"
-    }
+      title: "100% Cloud",
+      description:
+        "Accedi in ogni momento ai tuoi dati da qualsiasi dispositivo. Sicurezza, velocità e operatività ovunque ti trovi.",
+      icon: CloudIcon,
+    },
+    {
+      title: "100% Sicura",
+      description:
+        "Crittografia SSL avanzata per proteggere le informazioni. Tutti i tuoi dati sono protetti da tecnologie affidabili e moderne.",
+      icon: SecurityIcon,
+    },
   ];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-brand-red text-white px-6 py-3 rounded-full text-sm font-semibold mb-8">
-            <span>🔒 Piattaforma All-in-One</span>
+          <div className="inline-block bg-brand-red text-white px-5 py-2 rounded-full text-sm font-semibold mb-6 shadow-md">
+            📌 Piattaforma All-in-One
           </div>
-          <h2 className="text-4xl lg:text-6xl font-black mb-6">
+          <h2 className="text-5xl font-black leading-tight mb-4">
             Una piattaforma,<br />
-            <span className="gradient-text bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent">
-              Molte funzionalità
-            </span>
+            <span className="text-brand-red">Molte funzionalità</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Tutela Impresa gestisce ogni aspetto—assolutamente tutto. Una soluzione completa per ogni aspetto della sicurezza aziendale.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`${feature.bgColor} rounded-3xl p-6 group hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-gray-100`}
+              className="bg-white rounded-[1.25rem] border border-gray-200 p-10 text-center transition-all duration-300 transform hover:scale-[1.05] group hover:bg-brand-red hover:border-brand-red hover:shadow-[0_15px_40px_rgba(200,16,46,0.3)] shadow-[4px_4px_0_rgba(0,0,0,0.06)]"
             >
-              {/* Icon */}
-              <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
-                {feature.icon}
+              <div className="flex justify-center mb-6">
+                <img
+                  src={feature.icon}
+                  alt={feature.title}
+                  className="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110"
+                />
               </div>
-
-              {/* Content */}
-              <h3 className="text-sm font-black text-gray-800 mb-3 tracking-tight leading-tight">
+              <h3 className="text-4xl font-extrabold text-gray-900 mb-4 transition-colors duration-300 group-hover:text-white">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              <p className="text-lg text-gray-700 leading-relaxed transition-colors duration-300 group-hover:text-white">
                 {feature.description}
               </p>
-
-              {/* Button */}
-              <button className={`bg-gradient-to-r ${feature.color} text-white px-4 py-2 rounded-lg font-semibold text-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 w-full`}>
-                {feature.buttonText} →
-              </button>
             </div>
           ))}
         </div>

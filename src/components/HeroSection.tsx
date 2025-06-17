@@ -1,6 +1,8 @@
 
 import { useEffect, useState } from 'react';
 import heroImg from '../assets/dashboard.png';
+import clientLogo from '../assets/ferrari.png';
+
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +12,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden pt-28">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden pt-0 pb-28">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 bg-brand-red rounded-full blur-3xl animate-float"></div>
@@ -32,25 +34,28 @@ const HeroSection = () => {
         <div className={`space-y-10 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           <div className="space-y-8">
             {/* Enhanced Badge */}
-            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-red/10 to-brand-red-light/10 backdrop-blur-sm border border-brand-red/20 text-brand-red px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
-              <div className="w-3 h-3 bg-brand-red rounded-full animate-pulse"></div>
-              <span>🔒 Soluzione Completa per la Sicurezza Aziendale</span>
-            </div>
+           
+            
+
             
             {/* Enhanced Heading */}
-            <div className="space-y-4">
+            <div className="space-y-1">
+              <h3 className="text-2xl font-black text-gray-900 uppercase tracking-widest mt-10">
+                <span className="text-gray-900">Tutela Impresa</span>{' '}
+                <span className="text-brand-red">100%</span>
+              </h3>
               <h1 className="text-6xl lg:text-7xl font-black text-gray-900 leading-none">
                 <span className="block">
                   <span className="gradient-text bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent">
-                    Tutela
+                    SICUREZZA
                   </span>
                 </span>
-                <span className="block text-gray-800 mt-2">Impresa</span>
+                <span className="block text-gray-800 mt-0">AZIENDALE</span>
               </h1>
               
               <div className="relative">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-700 leading-tight">
-                  La tua sicurezza aziendale<br />
+                 
                   <span className="relative inline-block">
                     <span className="gradient-text bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
                       sempre sotto controllo
@@ -85,18 +90,18 @@ const HeroSection = () => {
           </div>
 
           {/* Enhanced Stats */}
-          <div className="grid grid-cols-3 gap-8 pt-12">
+          <div className="grid grid-cols-3 gap-8 pt-1">
             <div className="text-center group">
-              <div className="text-4xl font-black text-brand-red mb-2 group-hover:scale-110 transition-transform duration-300">10K+</div>
-              <div className="text-gray-600 text-sm font-semibold">Aziende Clienti</div>
+              <div className="text-4xl font-black text-brand-red mb-2 group-hover:scale-110 transition-transform duration-300">1K+</div>
+              <div className="text-gray-600 text-sm font-semibold">Clienti</div>
             </div>
             <div className="text-center group">
-              <div className="text-4xl font-black text-brand-red mb-2 group-hover:scale-110 transition-transform duration-300">99.9%</div>
-              <div className="text-gray-600 text-sm font-semibold">Uptime Garantito</div>
+              <div className="text-4xl font-black text-brand-red mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
+              <div className="text-gray-600 text-sm font-semibold">Sempre disponibile</div>
             </div>
             <div className="text-center group">
               <div className="text-4xl font-black text-brand-red mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
-              <div className="text-gray-600 text-sm font-semibold">Supporto Premium</div>
+              <div className="text-gray-600 text-sm font-semibold">Conformità garantita</div>
             </div>
           </div>
         </div>
@@ -113,10 +118,8 @@ const HeroSection = () => {
               />
               
               {/* Floating Security Badge */}
-              <div className="absolute -top-6 -right-6 bg-gradient-to-r from-brand-red to-brand-red-light text-white p-6 rounded-2xl shadow-2xl animate-pulse-glow">
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
+              <div className="absolute -top-5 -right-5 bg-brand-red p-3 rounded-2xl shadow-xl border border-brand-red-light">
+                <img src={clientLogo} alt="Client Logo" className="w-16 h-16 object-contain" />
               </div>
 
               {/* Compliance Badge */}
