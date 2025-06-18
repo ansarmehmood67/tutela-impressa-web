@@ -122,11 +122,13 @@ const OnePlatformSection = () => {
                 `}
               >
                 <div className="flex justify-center mb-6">
+                  <div className="bg-white p-4 rounded-full transition-transform duration-300 group-hover:scale-110">
                   <img
                     src={feature.icon}
                     alt={feature.title}
-                    className={`w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110`}
+                    className="w-12 h-12 object-contain"
                   />
+                  </div>
                 </div>
                 <h3 className="text-4xl font-extrabold mb-4 transition-colors duration-300">
                   {feature.title}

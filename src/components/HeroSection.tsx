@@ -123,7 +123,7 @@ const HeroSection = () => {
               </div>
 
               {/* Compliance Badge */}
-              <div className="absolute -bottom-6 -left-6 bg-green-500 text-white p-4 rounded-xl shadow-lg animate-bounce">
+              <div className="absolute -bottom-6 -left-4 bg-green-500 text-white p-4 rounded-xl shadow-lg animate-bounce">
                 <div className="text-sm font-bold">✅ 98% Conformità</div>
               </div>
 

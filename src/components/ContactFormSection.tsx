@@ -15,7 +15,7 @@ const ContactFormSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           {/* LEFT SIDE */}
-          <div className="text-white">
+          <div className="text-white text-center lg:text-left">
             <div className="inline-flex items-center space-x-2 bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
               <span>📩 Contattaci Ora</span>
             </div>
