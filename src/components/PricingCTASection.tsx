@@ -1,19 +1,7 @@
 import React from 'react';
-import Cappuccino from '../assets/food/cappuccino.png';
-import Croissant from '../assets/food/croissant.png';
-import Muffin from '../assets/food/muffin.png';
-import Danish from '../assets/food/Danish pastry.png';
-import Pain from '../assets/food/Pain au chocolat (1).png';
+import CroissantCoffeeImg from '../assets/food/croissant-coffee.png';
 
 const PricingCTASection = () => {
-  const foodItems = [
-    { img: Croissant, price: '€2.50' },
-    { img: Muffin, price: '€3.20' },
-    { img: Cappuccino, price: '€4.10' },
-    { img: Danish, price: '€3.80' },
-    { img: Pain, price: '€2.90' },
-  ];
-
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
@@ -45,18 +33,14 @@ const PricingCTASection = () => {
             <span>✔ Supporto 24/7</span>
           </div>
 
-          {/* Food cards: compact and inline */}
-          <div className="pt-6 flex justify-center flex-wrap gap-4">
-            {foodItems.map((item, idx) => (
-              <div key={idx} className="bg-white/10 backdrop-blur-md p-2 rounded-xl border border-white/20 w-24 sm:w-28 hover:scale-105 transition text-center">
-                <img
-                  src={item.img}
-                  alt="Food"
-                  className="rounded-lg w-full h-20 object-contain"
-                />
-                <p className="mt-1 text-xs font-semibold text-yellow-300">{item.price}</p>
-              </div>
-            ))}
+          {/* Single image at the bottom */}
+          <div className="pt-4 flex justify-center">
+            <img
+              src={CroissantCoffeeImg}
+              alt="Cappuccino e Croissant"
+              className="max-w-[400px] w-full h-auto object-contain"
+              style={{ background: 'transparent', boxShadow: 'none', borderRadius: 0 }}
+            />
           </div>
 
         </div>

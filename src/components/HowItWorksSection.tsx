@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const HowItWorksSection = () => {
   const steps = [
@@ -28,27 +28,59 @@ const HowItWorksSection = () => {
     }
   ];
 
+  const [visible, setVisible] = useState<number[]>([]);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = entry.target.getAttribute('data-index');
+          if (entry.isIntersecting && !visible.includes(Number(index))) {
+            setVisible((prev) => [...prev, Number(index)]);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, [visible]);
+
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-brand-red text-white px-4 py-2 rounded-full font-medium mb-4">
+          <span className="inline-block bg-brand-red text-white px-5 py-2 rounded-full font-semibold mb-4 shadow-md">
             ⚡ Processo Semplificato
           </span>
-          <h2 className="text-5xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-6xl font-black text-gray-900 mb-4">
             Come Funziona
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Tutela Impresa automatizza ogni processo di sicurezza aziendale con un sistema 
             intelligente e intuitivo che semplifica la gestione normativa.
           </p>
         </div>
 
+        {/* Steps */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step) => (
+          {steps.map((step, index) => (
             <div
-              key={step.number}
-              className="bg-white rounded-2xl p-8 shadow hover:shadow-lg transition-shadow"
+              key={index}
+              data-index={index}
+              ref={(el) => (cardRefs.current[index] = el)}
+              className={`
+                bg-brand-red/10 rounded-2xl p-8 border border-brand-red/20 shadow
+                transform transition-all duration-300
+                hover:scale-[1.05] hover:shadow-xl
+                ${visible.includes(index) ? 'animate-fade-in-left' : 'opacity-0'}
+              `}
             >
               {/* Step Number */}
               <div className="inline-flex items-center justify-center w-10 h-10 bg-brand-red text-white rounded-full font-bold mb-6">
@@ -56,20 +88,20 @@ const HowItWorksSection = () => {
               </div>
 
               {/* Icon */}
-              <div className="w-16 h-16 flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-brand-red to-brand-red-light text-white rounded-xl text-2xl">
+              <div className="w-24 h-24 text-4xl flex items-center justify-center mx-auto mb-6 bg-brand-red text-white rounded-2xl shadow-md transition-transform duration-300 group-hover:scale-110">
                 {step.icon}
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-3xl font-bold text-gray-900 mb-2 text-center">
                 {step.title}
               </h3>
-              <p className="text-gray-600 mb-6 text-sm">
+              <p className="text-gray-700 mb-6 text-sm text-center">
                 {step.description}
               </p>
 
               {/* CTA */}
-              <button className="w-full bg-brand-red text-white py-2 rounded-full font-medium hover:bg-brand-red-light transition-colors">
+              <button className="w-full bg-brand-red text-white py-3 rounded-full font-semibold hover:bg-brand-red-light transition-colors text-sm">
                 Scopri di più →
               </button>
             </div>

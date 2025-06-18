@@ -31,7 +31,7 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center relative z-10 max-w-7xl">
         {/* Left Content */}
-        <div className={`space-y-10 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+        <div className={`space-y-10 ${isVisible ? 'animate-fade-in' : 'opacity-0'} flex flex-col items-center text-center md:items-start md:text-left`}>
           <div className="space-y-8">
             {/* Enhanced Badge */}
            
@@ -77,14 +77,14 @@ const HeroSection = () => {
             <button className="group relative bg-gradient-to-r from-brand-red to-brand-red-light text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-red-light to-brand-red opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <span className="relative z-10 flex items-center space-x-2">
-                <span>📹 Richiedi Demo</span>
+                <span>RICHIEDI DEMO</span>
               </span>
             </button>
             
-            <button className="group border-3 border-brand-red text-brand-red px-10 py-5 rounded-2xl font-bold text-lg hover:bg-brand-red hover:text-white transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
+            <button className="group border-3 border-brand-red text-brand-red bg-brand-red/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-brand-red hover:text-white transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
               <div className="absolute inset-0 bg-brand-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               <span className="relative z-10 flex items-center space-x-2">
-                <span>🚀 ACCCESSO CLIENTI</span>
+                <span> ACCCESSO CLIENTI</span>
               </span>
             </button>
           </div>
@@ -118,8 +118,8 @@ const HeroSection = () => {
               />
               
               {/* Floating Security Badge */}
-              <div className="absolute -top-5 -right-5 bg-brand-red p-3 rounded-2xl shadow-xl border border-brand-red-light">
-                <img src={clientLogo} alt="Client Logo" className="w-16 h-16 object-contain" />
+              <div className="absolute -top-5 -right-0 bg-brand-red p-2 rounded-2xl shadow-xl border border-brand-red-light">
+                <img src={clientLogo} alt="Client Logo" className="w-14 h-14 object-contain" />
               </div>
 
               {/* Compliance Badge */}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import DocumentIcon from '../assets/icons/document (1).svg';
 import CertificateIcon from '../assets/icons/training certificate.svg';
 import DeadlinesIcon from '../assets/icons/deadlines.svg';
@@ -67,6 +67,29 @@ const OnePlatformSection = () => {
     },
   ];
 
+  const [visible, setVisible] = useState<number[]>([]);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = entry.target.getAttribute('data-index');
+          if (entry.isIntersecting && !visible.includes(Number(index))) {
+            setVisible((prev) => [...prev, Number(index)]);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, [visible]);
+
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -84,26 +107,36 @@ const OnePlatformSection = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-[1.25rem] border border-gray-200 p-10 text-center transition-all duration-300 transform hover:scale-[1.05] group hover:bg-brand-red hover:border-brand-red hover:shadow-[0_15px_40px_rgba(200,16,46,0.3)] shadow-[4px_4px_0_rgba(0,0,0,0.06)]"
-            >
-              <div className="flex justify-center mb-6">
-                <img
-                  src={feature.icon}
-                  alt={feature.title}
-                  className="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110"
-                />
+          {features.map((feature, index) => {
+            const isHotline = feature.title === "Hotline 24/7";
+            return (
+              <div
+                key={index}
+                data-index={index}
+                ref={(el) => (cardRefs.current[index] = el)}
+                className={`rounded-[1.25rem] border p-10 text-center transition-all duration-300 transform group shadow-[4px_4px_0_rgba(0,0,0,0.06)]
+                  ${visible.includes(index) ? 'animate-fade-in-left' : 'opacity-0'}
+                  ${isHotline
+                    ? 'bg-brand-red border-brand-red text-white shadow-[0_15px_40px_rgba(200,16,46,0.3)]'
+                    : 'bg-white border-gray-200 hover:bg-brand-red hover:border-brand-red hover:shadow-[0_15px_40px_rgba(200,16,46,0.3)] hover:text-white hover:scale-[1.05]'}
+                `}
+              >
+                <div className="flex justify-center mb-6">
+                  <img
+                    src={feature.icon}
+                    alt={feature.title}
+                    className={`w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110`}
+                  />
+                </div>
+                <h3 className="text-4xl font-extrabold mb-4 transition-colors duration-300">
+                  {feature.title}
+                </h3>
+                <p className="text-lg leading-relaxed transition-colors duration-300">
+                  {feature.description}
+                </p>
               </div>
-              <h3 className="text-4xl font-extrabold text-gray-900 mb-4 transition-colors duration-300 group-hover:text-white">
-                {feature.title}
-              </h3>
-              <p className="text-lg text-gray-700 leading-relaxed transition-colors duration-300 group-hover:text-white">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
