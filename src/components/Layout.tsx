@@ -24,9 +24,12 @@ const Layout = ({ children }: LayoutProps) => {
               <a href="#funzionalita" className="text-gray-700 hover:text-brand-red font-semibold">Funzionalità</a>
               <a href="#vantaggi" className="text-gray-700 hover:text-brand-red font-semibold">Vantaggi</a>
               <a href="#contact" className="text-gray-700 hover:text-brand-red font-semibold">Contatti</a>
-              <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <a
+                href="#demo"
+                className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
                 RICHIEDI LA DEMO
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -51,14 +54,15 @@ const Layout = ({ children }: LayoutProps) => {
         {/* Mobile Menu Panel */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200 px-4 pt-4 pb-6 space-y-4 shadow-md">
-            <Link to="/functionality" className="block text-gray-700 hover:text-brand-red font-semibold">Funzionalità</Link>
-            <Link to="/sectors" className="block text-gray-700 hover:text-brand-red font-semibold">Settori</Link>
-            <Link to="/blog" className="block text-gray-700 hover:text-brand-red font-semibold">Blog</Link>
-            <Link to="/faq" className="block text-gray-700 hover:text-brand-red font-semibold">FAQ</Link>
-            <Link to="/contact" className="block text-gray-700 hover:text-brand-red font-semibold">Contatti</Link>
-            <button className="w-full bg-gradient-to-r from-brand-red to-brand-red-light text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <a href="#funzionalita" className="block text-gray-700 hover:text-brand-red font-semibold">Funzionalità</a>
+            <a href="#vantaggi" className="block text-gray-700 hover:text-brand-red font-semibold">Vantaggi</a>
+            <a href="#contact" className="block text-gray-700 hover:text-brand-red font-semibold">Contatti</a>
+            <a
+              href="#demo"
+              className="block text-center w-full bg-gradient-to-r from-brand-red to-brand-red-light text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
               RICHIEDI LA DEMO
-            </button>
+            </a>
           </div>
         )}
       </nav>
