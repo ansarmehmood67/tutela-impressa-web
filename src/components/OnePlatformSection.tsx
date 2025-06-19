@@ -91,7 +91,7 @@ const OnePlatformSection = () => {
   }, [visible]);
 
   return (
-    <section className="py-24 bg-white">
+    <section id="funzionalita" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-block bg-brand-red text-white px-5 py-2 rounded-full text-sm font-semibold mb-6 shadow-md">

@@ -81,12 +81,17 @@ const HeroSection = () => {
               </span>
             </button>
             
-            <button className="group border-3 border-brand-red text-brand-red bg-brand-red/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-brand-red hover:text-white transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
-              <div className="absolute inset-0 bg-brand-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-              <span className="relative z-10 flex items-center space-x-2">
-                <span> ACCCESSO CLIENTI</span>
-              </span>
-            </button>
+            <a
+  href="https://tutela-impresa.kaora.it/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group border-3 border-brand-red text-brand-red bg-brand-red/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-brand-red hover:text-white transition-all duration-500 transform hover:scale-105 relative overflow-hidden inline-block"
+>
+  <div className="absolute inset-0 bg-brand-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+  <span className="relative z-10 flex items-center space-x-2">
+    <span>ACCCESSO CLIENTI</span>
+  </span>
+</a>
           </div>
 
           {/* Enhanced Stats */}

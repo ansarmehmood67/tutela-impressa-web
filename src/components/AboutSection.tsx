@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutSection = () => {
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-20 bg-[#fff1f2] relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center space-y-6">
           <h2 className="text-5xl lg:text-6xl font-extrabold text-brand-red">

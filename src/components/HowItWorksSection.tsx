@@ -52,7 +52,7 @@ const HowItWorksSection = () => {
   }, [visible]);
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section id="vantaggi" className="py-24 bg-white">
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
@@ -76,7 +76,7 @@ const HowItWorksSection = () => {
               data-index={index}
               ref={(el) => (cardRefs.current[index] = el)}
               className={`
-                bg-brand-red/10 rounded-2xl p-8 border border-brand-red/20 shadow
+                bg-brand-red/15 rounded-2xl p-8 border border-brand-red/20 shadow
                 transform transition-all duration-300
                 hover:scale-[1.05] hover:shadow-xl
                 ${visible.includes(index) ? 'animate-fade-in-left' : 'opacity-0'}
