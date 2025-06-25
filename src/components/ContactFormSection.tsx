@@ -9,8 +9,8 @@ declare global {
 const ContactFormSection = () => {
   const [formHtml, setFormHtml] = useState('');
 
+  // Step 1: Load the form HTML from public folder
   useEffect(() => {
-    // Load form HTML
     fetch('/mailerlite-form.html')
       .then(res => res.text())
       .then(html => {
@@ -18,8 +18,10 @@ const ContactFormSection = () => {
       });
   }, []);
 
+  // Step 2: After form is loaded, inject reCAPTCHA script safely
   useEffect(() => {
-    // Load reCAPTCHA script dynamically
+    if (!formHtml) return;
+
     const scriptId = 'recaptcha-script';
     if (!document.getElementById(scriptId)) {
       const script = document.createElement('script');
@@ -28,13 +30,8 @@ const ContactFormSection = () => {
       script.defer = true;
       script.id = scriptId;
       document.body.appendChild(script);
-    } else if (window.grecaptcha) {
-      // Optional: if needed, render reCAPTCHA manually
-      window.grecaptcha.render('g-recaptcha', {
-        sitekey: '6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD',
-      });
     }
-  }, [formHtml]); // Run again once HTML is injected
+  }, [formHtml]);
 
   return (
     <section className="py-24 bg-gradient-to-br from-brand-red via-brand-red-light to-brand-red relative overflow-hidden">
@@ -60,7 +57,7 @@ const ContactFormSection = () => {
             </p>
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT SIDE (FORM) */}
           <div
             className="w-full bg-white rounded-3xl p-6 shadow-xl"
             dangerouslySetInnerHTML={{ __html: formHtml }}
