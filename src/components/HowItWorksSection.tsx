@@ -1,45 +1,85 @@
+import { useEffect, useRef } from 'react';
+
 const HowItWorksSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardsRef = useRef<HTMLDivElement[]>([]);
+
   const steps = [
     {
       number: "1",
-      title: "Ricevi la Consulenza",
-      description: "Una consulenza personalizzata per comprendere i tuoi bisogni e definire la strategia migliore.",
+      title: "Ricevi Consulenza",
+      description: "Consulenza personalizzata per identificare le tue esigenze specifiche e definire la strategia migliore per la tua azienda.",
       icon: "💬",
-      delay: "animate-delay-100"
     },
     {
       number: "2", 
       title: "Carica i Dati",
-      description: "Carica in modo sicuro e veloce i tuoi documenti in un sistema cloud ordinato, protetto e sempre accessibile.",
+      description: "Caricamento semplificato e sicuro di tutti i tuoi documenti aziendali in un ambiente protetto e organizzato.",
       icon: "📊",
-      delay: "animate-delay-200"
     },
     {
       number: "3",
       title: "Verifica Conformità", 
-      description: "Controlli automatici sulla conformità normativa con analisi intelligenti e report di eventuali criticità.",
+      description: "Analisi automatica della conformità normativa con controlli intelligenti e identificazione delle aree di miglioramento.",
       icon: "✅",
-      delay: "animate-delay-300"
     },
     {
       number: "4",
-      title: "Attivazione Piattaforma",
-      description: "Configuriamo la piattaforma con tutti gli strumenti necessari per iniziare subito a lavorare in sicurezza.",
+      title: "Attiva Piattaforma",
+      description: "Configurazione completa della piattaforma con tutti gli strumenti personalizzati per le tue necessità operative.",
       icon: "🚀",
-      delay: "animate-delay-400"
     },
     {
       number: "5",
-      title: "Pensiamo a Tutto Noi",
-      description: "non devi più fare nulla.La piattaforma ti avviserà al momento opportuno",
+      title: "Pensiamo a Tutto",
+      description: "Non devi più fare nulla. La piattaforma ti avviserà al momento opportuno.",
       icon: "🧘‍♂️",
-      delay: "animate-delay-500",
       special: true
     }
   ];
 
+  useEffect(() => {
+    // Create individual observers for each card
+    const observers: IntersectionObserver[] = [];
+
+    cardsRef.current.forEach((card, index) => {
+      if (card) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const cardElement = entry.target as HTMLElement;
+                cardElement.classList.remove('card-hidden');
+                cardElement.classList.add('card-visible');
+              } else {
+                // Reset animation when card goes out of view
+                const cardElement = entry.target as HTMLElement;
+                cardElement.classList.remove('card-visible');
+                cardElement.classList.add('card-hidden');
+              }
+            });
+          },
+          { 
+            threshold: 0.6, // Card needs to be 60% visible before animating
+            rootMargin: '0px 0px -100px 0px' // Only trigger when card is well into viewport
+          }
+        );
+
+        observer.observe(card);
+        observers.push(observer);
+      }
+    });
+
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+    };
+  }, []);
+
   return (
-    <section id="vantaggi" className="py-32 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section 
+      ref={sectionRef}
+      className="py-32 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 bg-brand-red rounded-full blur-3xl"></div>
@@ -68,11 +108,14 @@ const HowItWorksSection = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`group animate-slide-in-right ${step.delay} opacity-0`}
+                ref={(el) => {
+                  if (el) cardsRef.current[index] = el;
+                }}
+                className="group card-hidden"
               >
                 {/* Step Card */}
                 <div className={`
-                  relative bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 text-center
+                  relative bg-white bg-opacity-90 backdrop-blur-sm rounded-3xl p-8 text-center h-full
                   shadow-lg shadow-brand-red/10
                   hover:shadow-2xl hover:shadow-brand-red/30 
                   transition-all duration-700 transform hover:scale-105 hover:-translate-y-2
@@ -81,7 +124,7 @@ const HowItWorksSection = () => {
                 `}>
                   
                   {/* Base Glow Effect */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/5 to-brand-red-light/5 opacity-100"></div>
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/10 to-brand-red-light/10 opacity-100"></div>
                   
                   {/* Hover Glow Effect */}
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/20 to-brand-red-light/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
@@ -97,7 +140,7 @@ const HowItWorksSection = () => {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-black text-gray-800 mb-4 group-hover:text-brand-red transition-colors duration-300">
+                  <h3 className="text-xl font-black text-gray-800 mb-4 group-hover:text-brand-red transition-colors duration-300 min-h-[3.5rem] flex items-center justify-center">
                     {step.title}
                   </h3>
                   
@@ -130,6 +173,26 @@ const HowItWorksSection = () => {
 
         
       </div>
+
+      <style>{`
+        .card-hidden {
+          opacity: 0;
+          transform: translateX(100px);
+          transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .card-visible {
+          opacity: 1;
+          transform: translateX(0);
+          transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        @media (max-width: 1023px) {
+          .card-hidden {
+            transform: translateX(150px);
+          }
+        }
+      `}</style>
     </section>
   );
 };
