@@ -39,44 +39,43 @@ const HowItWorksSection = () => {
   ];
 
   useEffect(() => {
-    // Create individual observers for each card
-    const observers: IntersectionObserver[] = [];
+  const shownCards = new Set<number>(); // Track already-animated cards
+  const observers: IntersectionObserver[] = [];
 
-    cardsRef.current.forEach((card, index) => {
-      if (card) {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const cardElement = entry.target as HTMLElement;
-                cardElement.classList.remove('card-hidden');
-                cardElement.classList.add('card-visible');
-              } else {
-                // Reset animation when card goes out of view
-                const cardElement = entry.target as HTMLElement;
-                cardElement.classList.remove('card-visible');
-                cardElement.classList.add('card-hidden');
-              }
-            });
-          },
-          { 
-            threshold: 0.6, // Card needs to be 60% visible before animating
-            rootMargin: '0px 0px -100px 0px' // Only trigger when card is well into viewport
-          }
-        );
+  cardsRef.current.forEach((card, index) => {
+    if (card) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !shownCards.has(index)) {
+              const cardElement = entry.target as HTMLElement;
+              cardElement.classList.remove('card-hidden');
+              cardElement.classList.add('card-visible');
+              shownCards.add(index); // Mark this card as shown
+              observer.unobserve(cardElement); // Stop observing this card
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+          rootMargin: '0px 0px -20px 0px',
+        }
+      );
 
-        observer.observe(card);
-        observers.push(observer);
-      }
-    });
+      observer.observe(card);
+      observers.push(observer);
+    }
+  });
 
-    return () => {
-      observers.forEach(observer => observer.disconnect());
-    };
-  }, []);
+  return () => {
+    observers.forEach((observer) => observer.disconnect());
+  };
+}, []);
+
 
   return (
     <section 
+    id="vantaggi"
       ref={sectionRef}
       className="py-32 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
     >
