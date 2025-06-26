@@ -57,9 +57,11 @@ const ManagementSection = () => {
               per la certificazione della conformità.
             </p>
 
+            <a href="#contact">
             <button className="bg-white text-brand-red px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
               Scopri di più
             </button>
+            </a>
           </div>
 
           {/* Right Content - Central Circle and Icons */}

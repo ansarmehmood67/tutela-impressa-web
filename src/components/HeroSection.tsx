@@ -73,26 +73,29 @@ const HeroSection = () => {
           </div>
           
           {/* Enhanced CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6">
-            <button className="group relative bg-gradient-to-r from-brand-red to-brand-red-light text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-red-light to-brand-red opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <span className="relative z-10 flex items-center space-x-2">
-                <span>RICHIEDI DEMO</span>
-              </span>
-            </button>
-            
-            <a
-  href="https://tutela-impresa.kaora.it/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="group border-3 border-brand-red text-brand-red bg-brand-red/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-brand-red hover:text-white transition-all duration-500 transform hover:scale-105 relative overflow-hidden inline-block"
->
-  <div className="absolute inset-0 bg-brand-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-  <span className="relative z-10 flex items-center space-x-2">
-    <span>ACCCESSO CLIENTI</span>
-  </span>
-</a>
-          </div>
+<div className="flex flex-col sm:flex-row gap-6">
+  {/* Button to scroll to Contact Form */}
+  <a href="#contact" className="group relative bg-gradient-to-r from-brand-red to-brand-red-light text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-r from-brand-red-light to-brand-red opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <span className="relative z-10 flex items-center space-x-2">
+      <span>RICHIEDI DEMO</span>
+    </span>
+  </a>
+
+  {/* External Client Access Button */}
+  <a
+    href="https://tutela-impresa.kaora.it/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group border-3 border-brand-red text-brand-red bg-brand-red/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-brand-red hover:text-white transition-all duration-500 transform hover:scale-105 relative overflow-hidden inline-block"
+  >
+    <div className="absolute inset-0 bg-brand-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+    <span className="relative z-10 flex items-center space-x-2">
+      <span>ACCESSO CLIENTI</span>
+    </span>
+  </a>
+</div>
+
 
           {/* Enhanced Stats */}
           <div className="grid grid-cols-3 gap-8 pt-1">

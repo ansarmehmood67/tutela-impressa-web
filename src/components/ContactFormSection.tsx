@@ -34,7 +34,7 @@ const ContactFormSection = () => {
   }, [formHtml]);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-brand-red via-brand-red-light to-brand-red relative overflow-hidden">
+    <section id="contact" className="py-24 bg-gradient-to-br from-brand-red via-brand-red-light to-brand-red relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* LEFT SIDE */}

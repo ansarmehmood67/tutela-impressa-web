@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const VideoSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const embedUrl = 'https://www.youtube.com/embed/GALTtUlfOk4?si=RLIvyGVUH_gSIbSk';
+  const embedUrl = 'https://www.youtube.com/embed/HrZKCyKTY4o?si=SVhfOSWJbCZQ02MW';
 
   useEffect(() => {
     const observer = new IntersectionObserver(

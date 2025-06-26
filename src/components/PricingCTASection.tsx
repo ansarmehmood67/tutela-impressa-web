@@ -19,12 +19,12 @@ const PricingCTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-white text-brand-red px-6 py-3 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+            <a href="#contact">
+            <button className="bg-white text-brand-red px-8 py-3 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
               Parti Ora
             </button>
-            <button className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-brand-red transition transform hover:scale-105">
-              Scopri i Prezzi
-            </button>
+            </a>
+            
           </div>
 
           <div className="flex justify-center flex-wrap gap-6 text-sm opacity-80">

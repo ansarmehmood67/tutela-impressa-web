@@ -23,9 +23,8 @@ const Layout = ({ children }: LayoutProps) => {
             <div className="hidden md:flex items-center space-x-8">
               <a href="#funzionalita" className="text-gray-700 hover:text-brand-red font-semibold">Funzionalità</a>
               <a href="#vantaggi" className="text-gray-700 hover:text-brand-red font-semibold">Vantaggi</a>
-              <a href="#contact" className="text-gray-700 hover:text-brand-red font-semibold">Contatti</a>
               <a
-                href="#demo"
+                href="#contact"
                 className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 RICHIEDI LA DEMO
